@@ -1,0 +1,22 @@
+{
+    "exchanges": [
+        {
+            "name": "binance",
+            "url": "http://localhost:43000/"
+        },
+        {
+            "name": "coingecko",
+            "url": "http://localhost:41000/"
+        }
+    ],
+    "coins":[
+        "ada",
+        "atom",
+        "btc",
+        "eth",
+        "sol"
+    ],
+    "filters": [
+        "ORDER BY id DESC"
+    ]
+}

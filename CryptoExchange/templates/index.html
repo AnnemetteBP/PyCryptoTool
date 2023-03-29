@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    <title>Cross Crypto Exchange Tool</title>
+    <style>
+        .navbar {border-bottom:solid .5px lightgray; padding:22px;}
+        .navbar-brand {font-weight:bolder;}
+        .logo {width:auto; height:42px; margin-left:22px;}
+        .content-wrapper {margin-bottom:12px; padding:22px;}
+        /* Created with https://www.css-gradient.com */
+        .footer {height:88px; width:100%; margin-bottom:0px; background:black;}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-start">
+                <a class="navbar-brand" href="#">Cross Crypto Exchange Tool</a>
+            </div>
+            <div class="d-flex justify-content-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <img src="data:image/png;base64,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" class="logo">
+                    </li>
+                    <li class="nav-item">
+                        <img src="https://static.coingecko.com/s/coingecko-logo-8903d34ce19ca4be1c81f0db30e924154750d208683fad7ae6f2ce06c76d0a56.png" class="logo">
+                    </li>
+                </ul>
+            </div>
+            <div class="d-flex justify-content-end">
+                <p class="nav-item">USD Currency index</p>
+            </div>
+        </div>
+    </nav>              
+    <div class="row">
+        <div class="col-md-4">
+            <div class="container-fluid content-wrapper">
+                <img src="https://assets.coingecko.com/coins/images/1481/thumb/cosmos_hub.png" id="atom-logo">
+                <label for="atom-logo">Cosmos Hub</label>
+                <h2>ATOM</h2>
+                <canvas id="atom"></canvas>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="container-fluid content-wrapper">
+                <img src="https://assets.coingecko.com/coins/images/975/thumb/cardano.png" id="ada-logo">
+                <label for="ada-logo">Cardano</label>
+                <h2>ADA</h2>
+                <canvas id="ada"></canvas>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="container-fluid content-wrapper">
+                <img src="https://assets.coingecko.com/coins/images/4128/thumb/solana.png" id="sol-logo">
+                <label for="sol-logo">Solana</label>
+                <h2>SOL</h2>
+                <canvas id="sol"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="container-fluid content-wrapper">
+                <img src="https://assets.coingecko.com/coins/images/279/thumb/ethereum.png" id="eth-logo">
+                <label for="eth-logo">Ethereum</label>
+                <h2>ETH</h2>
+                <canvas id="eth"></canvas>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="container-fluid content-wrapper">
+                <img src="https://assets.coingecko.com/coins/images/1/thumb/bitcoin.png" id="btc-logo">
+                <label for="btc-logo">Bitcoin</label>
+                <h2>BTC</h2>
+                <canvas id="btc"></canvas>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="container-fluid content-wrapper"></div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container-fluid"></div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', path='/app.js') }}"></script>
+</body>
+</html>

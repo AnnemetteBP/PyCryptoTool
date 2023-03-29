@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  binanceapi:
+    build: ./binanceapi/
+    volumes:
+      - ./binanceapi/:/code
+    ports:
+      - "43000:5000"
+    environment:
+      PYTHONPATH: /code   
+
+  coingeckoapi:
+    build: ./coingeckoapi/
+    volumes:
+      - ./coingeckoapi/:/code
+    ports:
+      - "41000:5000"
+    environment:
+      PYTHONPATH: /code
+
+  cryptoexchange:
+    build: ./cryptoexchange/
+    volumes:
+      - ./cryptoexchange/:/code
+    ports:
+      - "42000:5000"
+    environment:
+      PYTHONPATH: /code
